@@ -9,10 +9,6 @@ AI/ML engineer in New Delhi. I build LLM products end to end (agents, assistants
 [![Followers](https://img.shields.io/github/followers/palindromeRice?style=flat-square&color=9b8a76&label=followers)](https://github.com/palindromeRice?tab=followers)
 ![Profile views](https://komarev.com/ghpvc/?username=palindromeRice&style=flat-square&color=9b8a76&label=profile+views)
 
-### Stack
-
-[![Stack](https://skillicons.dev/icons?i=python,pytorch,fastapi,postgres,redis,docker,aws,githubactions,linux,bash,c,swift,js,latex,git&perline=15)](https://skillicons.dev)
-
 ### Activity
 
 <img src="assets/stats.svg" width="100%" alt="Contribution stats for the last 12 months">
