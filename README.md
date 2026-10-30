@@ -37,8 +37,8 @@ I build AI agents. By day: production agents that grade, moderate, and analyse a
 - Public research code: [openEnvRL](https://github.com/palindromeRice/openEnvRL), [capl](https://github.com/palindromeRice/capl), [quake2-llm-decompile](https://github.com/palindromeRice/quake2-llm-decompile)
 - Full machine-readable index: [llms.txt](https://palindromerice.github.io/llms.txt)
 <!-- agent-stats:start -->
-- Updated: 2026-10-31, covering the last 12 months, public and private work
-- Contributions: 1071; commits: 225; pull requests: 22; repositories owned: 52
+- Updated: 2026-10-30, covering the last 12 months, public and private work
+- Contributions: 1072; commits: 912; pull requests: 122; repositories owned: 52
 - Streak: current 4 days, longest 7 days
 - Busiest weekday: Thursday; peak commit hour: 00:00 IST
 - Languages by code size: Python 77%, JavaScript 13%, TeX 3%, Shell 2%
