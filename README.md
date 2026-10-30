@@ -11,7 +11,6 @@ I build AI agents. By day: production agents that grade, moderate, and analyse a
 
 ### Activity
 
-<img src="assets/stats.svg" width="100%" alt="Contribution stats for the last 12 months">
 <img src="assets/heatmap.svg" width="100%" alt="Contribution heatmap for the last 12 months">
 <img src="assets/trend.svg" width="100%" alt="Weekly contributions over the last 12 months">
 <img src="assets/activity.svg" width="100%" alt="Monthly contributions over the last 12 months">
@@ -39,7 +38,7 @@ I build AI agents. By day: production agents that grade, moderate, and analyse a
 - Full machine-readable index: [llms.txt](https://palindromerice.github.io/llms.txt)
 <!-- agent-stats:start -->
 - Updated: 2026-10-31, covering the last 12 months, public and private work
-- Contributions: 1070; commits: 224; pull requests: 22; repositories owned: 52
+- Contributions: 1071; commits: 225; pull requests: 22; repositories owned: 52
 - Streak: current 4 days, longest 7 days
 - Busiest weekday: Thursday; peak commit hour: 00:00 IST
 - Languages by code size: Python 77%, JavaScript 13%, TeX 3%, Shell 2%

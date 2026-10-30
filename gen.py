@@ -98,28 +98,6 @@ def streaks(days):
     return current, longest
 
 
-def stats(v):
-    c = v["contributionsCollection"]
-    current, longest = streaks(calendar(v))
-    tiles = [
-        (c["contributionCalendar"]["totalContributions"], "contributions"),
-        (c["totalCommitContributions"], "commits"),
-        (c["totalPullRequestContributions"], "pull requests"),
-        (v["repositories"]["totalCount"], "repositories"),
-        (current, "day streak"),
-        (longest, "longest streak"),
-    ]
-    W, H, left = 840, 130, 30
-    tw = (W - 2 * left) / len(tiles)
-    body = [f'<text x="{left}" y="30" class="title">Last 12 months</text>']
-    for i, (n, label) in enumerate(tiles):
-        x = left + i * tw + tw / 2
-        body.append(f'<g class="rise" {delay(i, .12)}>'
-                    f'<text x="{x:.1f}" y="88" text-anchor="middle" class="big">{n:,}</text>'
-                    f'<text x="{x:.1f}" y="112" text-anchor="middle" class="lbl muted">{label}</text></g>')
-    return svg(W, H, "".join(body), "Contribution stats for the last 12 months")
-
-
 def activity(v):
     months = Counter()
     for date, n in calendar(v):
@@ -303,7 +281,7 @@ def splice(text, block, start="<!-- agent-stats:start -->", end="<!-- agent-stat
 if __name__ == "__main__":
     v = fetch()
     os.makedirs("assets", exist_ok=True)
-    for fn in (stats, heatmap, trend, activity, weekdays, clock, languages):
+    for fn in (heatmap, trend, activity, weekdays, clock, languages):
         with open(f"assets/{fn.__name__}.svg", "w") as f:
             f.write(fn(v))
         print("wrote", fn.__name__)
