@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="200" viewBox="0 0 840 200" role="img" aria-label="Weekly contributions over the last 12 months">
+<style>
+  text { font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif; fill: #3d3d3d; }
+  .muted { fill: #9b8a76; } .title { font-size: 20px; } .lbl { font-size: 13px; } .val { font-size: 14px; }
+  .big { font-size: 34px; fill: #043976; } .bar { fill: #043976; } .axis { stroke: #e2ddd6; }
+  .grow-y { transform-box: fill-box; transform-origin: bottom; animation: gy .9s cubic-bezier(.2,.8,.2,1) both; }
+  .grow-x { transform-box: fill-box; transform-origin: left; animation: gx .9s cubic-bezier(.2,.8,.2,1) both; }
+  .rise { animation: rise .7s cubic-bezier(.2,.8,.2,1) both; }
+  .fade { animation: fade .6s ease-out both; }
+  .cell { fill: #043976; } .empty { fill: #ebe7e1; }
+  .l1 { opacity: .3; } .l2 { opacity: .55; } .l3 { opacity: .8; } .l4 { opacity: 1; }
+  .pop { transform-box: fill-box; transform-origin: center; animation: pop .4s ease-out both; }
+  .area { fill: #043976; opacity: .12; } .line { fill: none; stroke: #043976; stroke-width: 2; }
+  .draw { stroke-dasharray: 1; animation: draw 1.8s ease-out both; }
+  .spoke { stroke: #043976; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; animation: draw .8s ease-out both; }
+  .ring { stroke: #e2ddd6; fill: none; }
+  @keyframes pop { from { opacity: 0; transform: scale(.3); } }
+  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes gy { from { transform: scaleY(0); } }
+  @keyframes gx { from { transform: scaleX(0); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes fade { from { opacity: 0; } }
+  @media (prefers-color-scheme: dark) {
+    text { fill: #e7e9ee; } .muted { fill: #b8a68f; } .axis { stroke: #30363d; }
+    .bar, .big, .cell { fill: #8fb4e8; } .empty { fill: #1f242c; } .ring { stroke: #30363d; }
+    .area { fill: #8fb4e8; } .line, .spoke { stroke: #8fb4e8; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style><text x="30" y="30" class="title">Weekly trend</text><line x1="30" x2="810" y1="170" y2="170" class="axis"/><path d="M30.0,151.7 L45.0,167.4 L60.0,163.5 L75.0,167.4 L90.0,164.8 L105.0,167.4 L120.0,166.1 L135.0,170.0 L150.0,164.8 L165.0,170.0 L180.0,164.8 L195.0,170.0 L210.0,170.0 L225.0,168.7 L240.0,168.7 L255.0,163.5 L270.0,159.6 L285.0,163.5 L300.0,160.9 L315.0,149.1 L330.0,150.4 L345.0,85.2 L360.0,149.1 L375.0,164.8 L390.0,166.1 L405.0,170.0 L420.0,166.1 L435.0,164.8 L450.0,164.8 L465.0,167.4 L480.0,164.8 L495.0,163.5 L510.0,170.0 L525.0,164.8 L540.0,59.1 L555.0,129.6 L570.0,125.7 L585.0,83.9 L600.0,93.0 L615.0,67.0 L630.0,78.7 L645.0,97.0 L660.0,157.0 L675.0,159.6 L690.0,130.9 L705.0,98.3 L720.0,133.5 L735.0,127.0 L750.0,125.7 L765.0,159.6 L780.0,136.1 L795.0,106.1 L810.0,50.0 L810,170 L30,170 Z" class="area fade" style="animation-delay:1.2s"/><path d="M30.0,151.7 L45.0,167.4 L60.0,163.5 L75.0,167.4 L90.0,164.8 L105.0,167.4 L120.0,166.1 L135.0,170.0 L150.0,164.8 L165.0,170.0 L180.0,164.8 L195.0,170.0 L210.0,170.0 L225.0,168.7 L240.0,168.7 L255.0,163.5 L270.0,159.6 L285.0,163.5 L300.0,160.9 L315.0,149.1 L330.0,150.4 L345.0,85.2 L360.0,149.1 L375.0,164.8 L390.0,166.1 L405.0,170.0 L420.0,166.1 L435.0,164.8 L450.0,164.8 L465.0,167.4 L480.0,164.8 L495.0,163.5 L510.0,170.0 L525.0,164.8 L540.0,59.1 L555.0,129.6 L570.0,125.7 L585.0,83.9 L600.0,93.0 L615.0,67.0 L630.0,78.7 L645.0,97.0 L660.0,157.0 L675.0,159.6 L690.0,130.9 L705.0,98.3 L720.0,133.5 L735.0,127.0 L750.0,125.7 L765.0,159.6 L780.0,136.1 L795.0,106.1 L810.0,50.0" pathLength="1" class="line draw"/><circle cx="810.0" cy="50.0" r="4" class="bar fade" style="animation-delay:1.6s"/><text x="810.0" y="40.0" text-anchor="end" class="lbl fade" style="animation-delay:1.6s">best week: 92</text></svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="410" height="260" viewBox="0 0 410 260" role="img" aria-label="Contributions by day of the week">
+<style>
+  text { font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif; fill: #3d3d3d; }
+  .muted { fill: #9b8a76; } .title { font-size: 20px; } .lbl { font-size: 13px; } .val { font-size: 14px; }
+  .big { font-size: 34px; fill: #043976; } .bar { fill: #043976; } .axis { stroke: #e2ddd6; }
+  .grow-y { transform-box: fill-box; transform-origin: bottom; animation: gy .9s cubic-bezier(.2,.8,.2,1) both; }
+  .grow-x { transform-box: fill-box; transform-origin: left; animation: gx .9s cubic-bezier(.2,.8,.2,1) both; }
+  .rise { animation: rise .7s cubic-bezier(.2,.8,.2,1) both; }
+  .fade { animation: fade .6s ease-out both; }
+  .cell { fill: #043976; } .empty { fill: #ebe7e1; }
+  .l1 { opacity: .3; } .l2 { opacity: .55; } .l3 { opacity: .8; } .l4 { opacity: 1; }
+  .pop { transform-box: fill-box; transform-origin: center; animation: pop .4s ease-out both; }
+  .area { fill: #043976; opacity: .12; } .line { fill: none; stroke: #043976; stroke-width: 2; }
+  .draw { stroke-dasharray: 1; animation: draw 1.8s ease-out both; }
+  .spoke { stroke: #043976; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; animation: draw .8s ease-out both; }
+  .ring { stroke: #e2ddd6; fill: none; }
+  @keyframes pop { from { opacity: 0; transform: scale(.3); } }
+  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes gy { from { transform: scaleY(0); } }
+  @keyframes gx { from { transform: scaleX(0); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes fade { from { opacity: 0; } }
+  @media (prefers-color-scheme: dark) {
+    text { fill: #e7e9ee; } .muted { fill: #b8a68f; } .axis { stroke: #30363d; }
+    .bar, .big, .cell { fill: #8fb4e8; } .empty { fill: #1f242c; } .ring { stroke: #30363d; }
+    .area { fill: #8fb4e8; } .line, .spoke { stroke: #8fb4e8; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style><text x="20" y="30" class="title">By weekday</text><line x1="20" x2="390" y1="220" y2="220" class="axis"/><rect x="26.0" y="82.6" width="40.9" height="137.4" rx="2" class="bar grow-y" style="animation-delay:0.00s"/><text x="46.4" y="76.6" text-anchor="middle" class="lbl fade" style="animation-delay:0.00s">207</text><text x="46.4" y="238" text-anchor="middle" class="lbl muted">Mon</text><rect x="78.9" y="156.3" width="40.9" height="63.7" rx="2" class="bar grow-y" style="animation-delay:0.06s"/><text x="99.3" y="150.3" text-anchor="middle" class="lbl fade" style="animation-delay:0.06s">96</text><text x="99.3" y="238" text-anchor="middle" class="lbl muted">Tue</text><rect x="131.7" y="90.6" width="40.9" height="129.4" rx="2" class="bar grow-y" style="animation-delay:0.12s"/><text x="152.1" y="84.6" text-anchor="middle" class="lbl fade" style="animation-delay:0.12s">195</text><text x="152.1" y="238" text-anchor="middle" class="lbl muted">Wed</text><rect x="184.6" y="66.0" width="40.9" height="154.0" rx="2" class="bar grow-y" style="animation-delay:0.18s"/><text x="205.0" y="60.0" text-anchor="middle" class="lbl fade" style="animation-delay:0.18s">232</text><text x="205.0" y="238" text-anchor="middle" class="lbl muted">Thu</text><rect x="237.4" y="116.4" width="40.9" height="103.6" rx="2" class="bar grow-y" style="animation-delay:0.24s"/><text x="257.9" y="110.4" text-anchor="middle" class="lbl fade" style="animation-delay:0.24s">156</text><text x="257.9" y="238" text-anchor="middle" class="lbl muted">Fri</text><rect x="290.3" y="164.2" width="40.9" height="55.8" rx="2" class="bar grow-y" style="animation-delay:0.30s"/><text x="310.7" y="158.2" text-anchor="middle" class="lbl fade" style="animation-delay:0.30s">84</text><text x="310.7" y="238" text-anchor="middle" class="lbl muted">Sat</text><rect x="343.1" y="156.9" width="40.9" height="63.1" rx="2" class="bar grow-y" style="animation-delay:0.36s"/><text x="363.6" y="150.9" text-anchor="middle" class="lbl fade" style="animation-delay:0.36s">95</text><text x="363.6" y="238" text-anchor="middle" class="lbl muted">Sun</text></svg>
