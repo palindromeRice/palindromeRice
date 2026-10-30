@@ -264,7 +264,7 @@ def agent_block(v):
     langs = ", ".join(f"{k} {100 * n / s:.0f}%" for k, n in total.most_common(4))
     hours = commit_hours(v["id"])
     return "\n".join([
-        f"- Updated: {dt.date.today().isoformat()}, covering the last 12 months, public and private work",
+        f"- Updated: {dt.datetime.now(TZ).date().isoformat()}, covering the last 12 months, public and private work",
         f"- Contributions: {c['contributionCalendar']['totalContributions']}; commits: {c['totalCommitContributions']}; "
         f"pull requests: {c['totalPullRequestContributions']}; repositories owned: {v['repositories']['totalCount']}",
         f"- Streak: current {current} days, longest {longest} days",
