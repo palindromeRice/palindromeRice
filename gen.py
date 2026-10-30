@@ -4,6 +4,7 @@ Needs GH_TOKEN for the profile owner. With private repo read access the charts
 include private work; only aggregate counts are drawn, never repo names.
 """
 import datetime as dt
+import functools
 import json
 import math
 import os
@@ -210,13 +211,19 @@ def trend(v):
 TZ = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
 
-def clock(v):
+@functools.cache
+def commit_hours(user_id):
     since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    repos = fetch(COMMITS % (v["id"], since))["repositories"]["nodes"]
+    repos = fetch(COMMITS % (user_id, since))["repositories"]["nodes"]
     hours = Counter()
     for r in repos:
         for c in ((r["defaultBranchRef"] or {}).get("target") or {}).get("history", {}).get("nodes", []):
             hours[dt.datetime.fromisoformat(c["committedDate"].replace("Z", "+00:00")).astimezone(TZ).hour] += 1
+    return hours
+
+
+def clock(v):
+    hours = commit_hours(v["id"])
     W, H, cx, cy, r0, r1 = 410, 260, 205, 140, 30, 92
     peak = max(hours.values(), default=0) or 1
     body = [f'<text x="20" y="30" class="title">Commit clock</text>',
@@ -243,12 +250,17 @@ def clock(v):
 SKIP_LANGS = {"Jupyter Notebook"}
 
 
-def languages(v):
+def lang_share(v):
     total = Counter()
     for r in v["repositories"]["nodes"]:
         for e in r["languages"]["edges"]:
             if e["node"]["name"] not in SKIP_LANGS:
                 total[e["node"]["name"]] += e["size"]
+    return total
+
+
+def languages(v):
+    total = lang_share(v)
     top = total.most_common(6)
     s = sum(total.values()) or 1
     W, H, left, bar_x, row = 840, 230, 30, 160, 28
@@ -262,6 +274,32 @@ def languages(v):
     return svg(W, H, "".join(body), "Language share across repositories")
 
 
+def agent_block(v):
+    c = v["contributionsCollection"]
+    days = calendar(v)
+    current, longest = streaks(days)
+    week = Counter()
+    for date, n in days:
+        week[dt.date.fromisoformat(date).strftime("%A")] += n
+    total = lang_share(v)
+    s = sum(total.values()) or 1
+    langs = ", ".join(f"{k} {100 * n / s:.0f}%" for k, n in total.most_common(4))
+    hours = commit_hours(v["id"])
+    return "\n".join([
+        f"- Updated: {dt.date.today().isoformat()}, covering the last 12 months, public and private work",
+        f"- Contributions: {c['contributionCalendar']['totalContributions']}; commits: {c['totalCommitContributions']}; "
+        f"pull requests: {c['totalPullRequestContributions']}; repositories owned: {v['repositories']['totalCount']}",
+        f"- Streak: current {current} days, longest {longest} days",
+        f"- Busiest weekday: {week.most_common(1)[0][0]}; peak commit hour: {max(range(24), key=lambda h: hours[h]):02d}:00 IST",
+        f"- Languages by code size: {langs}",
+    ])
+
+
+def splice(text, block, start="<!-- agent-stats:start -->", end="<!-- agent-stats:end -->"):
+    i, j = text.index(start) + len(start), text.index(end)
+    return text[:i] + "\n" + block + "\n" + text[j:]
+
+
 if __name__ == "__main__":
     v = fetch()
     os.makedirs("assets", exist_ok=True)
@@ -269,5 +307,12 @@ if __name__ == "__main__":
         with open(f"assets/{fn.__name__}.svg", "w") as f:
             f.write(fn(v))
         print("wrote", fn.__name__)
+    with open("README.md") as f:
+        readme = f.read()
+    with open("README.md", "w") as f:
+        f.write(splice(readme, agent_block(v)))
+    print("wrote README stats")
     c, l = streaks([("a", 1), ("b", 0), ("c", 2), ("d", 3), ("e", 0)])
     assert (c, l) == (2, 2), (c, l)
+    assert splice("a<!-- agent-stats:start -->old<!-- agent-stats:end -->b", "new") == \
+        "a<!-- agent-stats:start -->\nnew\n<!-- agent-stats:end -->b"

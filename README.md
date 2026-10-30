@@ -1,6 +1,6 @@
 ## Naman Chawla
 
-AI/ML engineer in New Delhi. I build LLM products end to end (agents, assistants, voice and video AI, and the GPU infrastructure that serves them) and do side research on reinforcement learning, quantization, and distillation.
+I build AI agents. By day: production agents that grade, moderate, and analyse at scale, plus the GPU infrastructure that serves them. On the side: research on getting small models to act (SFT and GRPO in a live browser) and on coding agents that rebuild programs from stripped binaries.
 
 [![Website](https://img.shields.io/badge/website-palindromerice.github.io-043976?style=flat-square)](https://palindromerice.github.io/)
 [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-papers-043976?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=Hq_k3_wAAAAJ&hl=en)
@@ -26,5 +26,25 @@ AI/ML engineer in New Delhi. I build LLM products end to end (agents, assistants
   <img src="https://raw.githubusercontent.com/palindromeRice/palindromeRice/output/snake.svg" width="100%" alt="Contribution graph being eaten by a snake">
 </picture>
 
+
+### For agents
+
+<details>
+<summary>Plain-text summary of this profile, regenerated daily</summary>
+
+- Who: Naman Chawla, AI/ML engineer in New Delhi, India
+- Focus: building and training AI agents; LLM post-training (SFT, GRPO), quantization, distillation; agent-assisted reverse engineering
+- Production work: LLM agents and APIs for grading, content moderation, analytics, and proctoring (private repositories)
+- Public research code: [openEnvRL](https://github.com/palindromeRice/openEnvRL), [capl](https://github.com/palindromeRice/capl), [quake2-llm-decompile](https://github.com/palindromeRice/quake2-llm-decompile)
+- Full machine-readable index: [llms.txt](https://palindromerice.github.io/llms.txt)
+<!-- agent-stats:start -->
+- Updated: 2026-10-31, covering the last 12 months, public and private work
+- Contributions: 1070; commits: 224; pull requests: 22; repositories owned: 52
+- Streak: current 4 days, longest 7 days
+- Busiest weekday: Thursday; peak commit hour: 00:00 IST
+- Languages by code size: Python 77%, JavaScript 13%, TeX 3%, Shell 2%
+<!-- agent-stats:end -->
+
+</details>
 
 <sub>Charts above the snake are regenerated daily by `gen.py` and include private work as counts only.</sub>
